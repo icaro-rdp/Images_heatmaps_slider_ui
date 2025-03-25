@@ -78,17 +78,11 @@
       .original-image-container {
         margin: 0 auto 30px;
         max-width: 30%;
-        aspect-ratio: 1/1; /* Adding aspect ratio to maintain consistency */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
 
       .original-image {
         width: 100%;
         height: auto;
-        max-height: 100%;
-        object-fit: contain; /* Ensures the image isn't distorted */
         border: 2px solid #ddd;
         border-radius: 4px;
       }
@@ -121,7 +115,7 @@
         user-select: none;
         margin: 0;
         border-radius: 4px;
-        aspect-ratio: 1/1; /* Changed from 'square' to standard format */
+        aspect-ratio: square;
       }
 
       .comparison-figure:before {
@@ -225,9 +219,12 @@
       .imageAfter {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Changed from 'cover' to preserve aspect ratio without cropping */
+        object-fit: cover;
         user-select: none;
-        position: absolute; /* Both images need absolute positioning */
+      }
+
+      .imageBefore {
+        position: absolute;
         top: 0;
         left: 0;
       }
