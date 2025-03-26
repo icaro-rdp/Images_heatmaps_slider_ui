@@ -8,17 +8,16 @@ app = Flask(__name__)
 # Configuration - use absolute paths based on the application's root directory
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 IMAGE_FOLDER = os.path.join(BASE_DIR, 'static', 'Heatmap_images')
-BASE_MODEL_FOLDER = os.path.join(IMAGE_FOLDER, 'Authenticity', 'base_model')
-NEGATIVE_IMPACT_FOLDER = os.path.join(IMAGE_FOLDER, 'Authenticity', 'negative_impact_pruned_model')
-NOISY_PRUNED_FOLDER = os.path.join(IMAGE_FOLDER, 'Authenticity', 'noisy_pruned_model')
-ORIGINAL_FOLDER = os.path.join(IMAGE_FOLDER, 'original_images')
+NOISY_PRUNED_FOLDER = os.path.join(IMAGE_FOLDER, 'Real_authenticity', 'noisy_pruned_model')
+BASE_MODEL_FOLDER = os.path.join(IMAGE_FOLDER, 'Real_authenticity', 'base_model')
+ORIGINAL_FOLDER = os.path.join(IMAGE_FOLDER, 'Real_authenticity', 'original_images')
 
 # Ensure all directories exist
 def ensure_dir(directory):
     if not os.path.exists(directory):
         print(f"Warning: Directory does not exist: {directory}")
 
-for directory in [BASE_MODEL_FOLDER, NEGATIVE_IMPACT_FOLDER, NOISY_PRUNED_FOLDER, ORIGINAL_FOLDER]:
+for directory in [BASE_MODEL_FOLDER, NOISY_PRUNED_FOLDER, ORIGINAL_FOLDER]:
     ensure_dir(directory)
 
 @app.route('/')

@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +46,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 30px;
+        margin-bottom: 128px;
       }
 
       .nav-button {
@@ -75,164 +74,52 @@
         font-weight: bold;
       }
 
-      .original-image-container {
-        margin: 0 auto 30px;
-        max-width: 30%;
-      }
-
-      .original-image {
-        width: 100%;
-        height: auto;
-        border: 2px solid #ddd;
-        border-radius: 4px;
-      }
-
-      .comparisons-grid {
+      /* Side-by-side layout for all three images */
+      .content-row {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
         margin-bottom: 30px;
       }
 
-      @media (min-width: 768px) {
-        .comparisons-grid {
+      @media (max-width: 992px) {
+        .content-row {
           grid-template-columns: 1fr 1fr;
         }
       }
 
-      /* Slider Styles */
-      .comparison-wrapper {
-        padding: 15px;
+      @media (max-width: 768px) {
+        .content-row {
+          grid-template-columns: 1fr;
+        }
+      }
 
-        border-radius: 6px;
+      .image-container {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        padding: 15px;
+        background-color: white;
       }
 
-      .comparison-figure {
-        width: 100%;
+      .image-wrapper {
         position: relative;
-        overflow: hidden;
-        user-select: none;
-        margin: 0;
-        border-radius: 4px;
-        aspect-ratio: square;
-      }
-
-      .comparison-figure:before {
-        content: "";
         width: 100%;
-        height: 100%;
-        display: block;
+        padding-bottom: 100%; /* Creates a square */
+      }
+
+      .image {
         position: absolute;
         top: 0;
         left: 0;
-        background: black;
-        opacity: 0;
-        transition: all 0.2s ease;
-        z-index: 1;
-      }
-
-      .comparison-figure:hover:before {
-        opacity: 0.2;
-      }
-
-      .comparison-figure:active:before {
-        opacity: 0;
-      }
-
-      .sliderButton {
-        width: 60px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        cursor: grab;
-        z-index: 10;
-      }
-
-      .sliderButton:before,
-      .sliderButton:after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        background: white;
-      }
-
-      .sliderButton:before {
-        width: 3px;
-        height: 100%;
-        top: 0;
-        transform: translateX(-50%);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-      }
-
-      .sliderButton:after {
-        width: 40px;
-        height: 40px;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        transition: all 0.2s ease;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-      }
-
-      .sliderButton:hover:after {
-        transform: translate(-50%, -50%) scale(1.1);
-      }
-
-      .sliderButton:active,
-      .sliderButton:focus {
-        cursor: grabbing;
-      }
-
-      .arrowLeft,
-      .arrowRight {
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        font-family: Verdana;
-        font-size: 15px;
-        font-weight: bold;
-        color: black;
-        z-index: 11;
-        pointer-events: none;
-      }
-
-      .arrowLeft {
-        left: 42%;
-      }
-
-      .arrowLeft:before {
-        content: "<";
-      }
-
-      .arrowRight {
-        left: 58%;
-      }
-
-      .arrowRight:before {
-        content: ">";
-      }
-
-      .imageBefore,
-      .imageAfter {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        user-select: none;
+        border-radius: 4px;
       }
 
-      .imageBefore {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      /* Model labels */
-      .model-labels {
-        display: flex;
-        justify-content: space-between;
+      .model-label {
+        display: block;
+        text-align: center;
         margin-top: 10px;
         font-size: 0.9rem;
         color: #555;
@@ -256,7 +143,7 @@
   <body>
     <div class="container">
       <header>
-        <h1>Heatmap Image Comparison Tool</h1>
+        <h1>Heatmap Image Comparison</h1>
       </header>
 
       <div class="navigation">
@@ -265,80 +152,46 @@
         <button id="next-button" class="nav-button">Next →</button>
       </div>
 
-      <div class="original-image-container">
-        <h2>Original Image</h2>
-        <div style="position: relative">
-          <div id="original-loading" class="loading">Loading...</div>
-          <img
-            id="original-image"
-            class="original-image"
-            src=""
-            alt="Original Image"
-          />
-        </div>
-      </div>
-
-      <div class="comparisons-grid">
-        <div class="comparison-wrapper">
-          <h2>Base vs Negative Impact</h2>
-          <div id="negative-comparison" style="position: relative">
-            <div id="negative-loading" class="loading">Loading...</div>
-            <figure id="negative-figure" class="comparison-figure">
-              <div class="sliderButton">
-                <i class="arrowLeft"></i>
-                <i class="arrowRight"></i>
-              </div>
-              <img
-                class="imageBefore"
-                id="negative-image"
-                src=""
-                alt="Negative Impact Pruned Model"
-              />
-              <img
-                class="imageAfter"
-                id="base-image-negative"
-                src=""
-                alt="Base Model"
-              />
-            </figure>
-          </div>
-          <div class="model-labels">
-            <span>Negative Impact Pruned</span>
-            <span>Base Model</span>
+      <!-- Side-by-side layout for all three images -->
+      <div class="content-row">
+        <!-- Original image -->
+        <div class="image-container">
+          <h2>Original Image</h2>
+          <div class="image-wrapper">
+            <div id="original-loading" class="loading">Loading...</div>
+            <img
+              id="original-image"
+              class="image"
+              src=""
+              alt="Original Image"
+            />
           </div>
         </div>
 
-        <div class="comparison-wrapper">
-          <h2>Base vs Noisy Pruned</h2>
-          <div id="noisy-comparison" style="position: relative">
+        <!-- Base model image -->
+        <div class="image-container">
+          <h2>Base Model</h2>
+          <div class="image-wrapper">
+            <div id="base-loading" class="loading">Loading...</div>
+            <img id="base-image" class="image" src="" alt="Base Model" />
+          </div>
+        </div>
+
+        <!-- Noisy pruned model image -->
+        <div class="image-container">
+          <h2>Noisy Pruned Model</h2>
+          <div class="image-wrapper">
             <div id="noisy-loading" class="loading">Loading...</div>
-            <figure id="noisy-figure" class="comparison-figure">
-              <div class="sliderButton">
-                <i class="arrowLeft"></i>
-                <i class="arrowRight"></i>
-              </div>
-              <img
-                class="imageBefore"
-                id="noisy-image"
-                src=""
-                alt="Noisy Pruned Model"
-              />
-              <img
-                class="imageAfter"
-                id="base-image-noisy"
-                src=""
-                alt="Base Model"
-              />
-            </figure>
-          </div>
-          <div class="model-labels">
-            <span>Noisy Pruned</span>
-            <span>Base Model</span>
+            <img
+              id="noisy-image"
+              class="image"
+              src=""
+              alt="Noisy Pruned Model"
+            />
           </div>
         </div>
       </div>
     </div>
-
     <script>
       // State variables
       let currentIndex = 0;
@@ -354,17 +207,12 @@
       const imageCounter = document.getElementById("image-counter");
 
       const originalImage = document.getElementById("original-image");
-      const baseImageNegative = document.getElementById("base-image-negative");
-      const negativeImage = document.getElementById("negative-image");
-      const baseImageNoisy = document.getElementById("base-image-noisy");
+      const baseImage = document.getElementById("base-image");
       const noisyImage = document.getElementById("noisy-image");
 
       const originalLoading = document.getElementById("original-loading");
-      const negativeLoading = document.getElementById("negative-loading");
+      const baseLoading = document.getElementById("base-loading");
       const noisyLoading = document.getElementById("noisy-loading");
-
-      const negativeFigure = document.getElementById("negative-figure");
-      const noisyFigure = document.getElementById("noisy-figure");
 
       // Fetch image info
       async function fetchImageInfo() {
@@ -385,6 +233,15 @@
           loadImages();
         } catch (error) {
           console.error("Error fetching image info:", error);
+          // Fallback behavior if the API is not available
+          maxIndex = 10; // Assuming 10 images
+          availableIndices = Array.from({ length: maxIndex }, (_, i) => i + 1);
+          currentIndex = 1;
+
+          // Update UI
+          updateImageCounter();
+          updateNavigationButtons();
+          loadImages();
         }
       }
 
@@ -404,37 +261,24 @@
       function loadImages() {
         // Show loading overlays
         originalLoading.style.display = "flex";
-        negativeLoading.style.display = "flex";
+        baseLoading.style.display = "flex";
         noisyLoading.style.display = "flex";
-
-        // Reset image clips
-        negativeImage.style.clip = "";
-        negativeImage.style.clipPath = "";
-        noisyImage.style.clip = "";
-        noisyImage.style.clipPath = "";
 
         // Set image sources with cache-busting
         const timestamp = new Date().getTime();
         originalImage.src = `/static/${
           getImagePaths().original
         }?t=${timestamp}`;
-        baseImageNegative.src = `/static/${
-          getImagePaths().base
-        }?t=${timestamp}`;
-        negativeImage.src = `/static/${
-          getImagePaths().negative
-        }?t=${timestamp}`;
-        baseImageNoisy.src = `/static/${getImagePaths().base}?t=${timestamp}`;
+        baseImage.src = `/static/${getImagePaths().base}?t=${timestamp}`;
         noisyImage.src = `/static/${getImagePaths().noisy}?t=${timestamp}`;
       }
 
       // Get image paths based on current index
       function getImagePaths() {
         return {
-          original: `${IMAGE_FOLDER}/original_images/original_img_idx${currentIndex}.png`,
-          base: `${IMAGE_FOLDER}/Authenticity/base_model/heatmap_img_idx${currentIndex}.png`,
-          negative: `${IMAGE_FOLDER}/Authenticity/negative_impact_pruned_model/heatmap_img_idx${currentIndex}.png`,
-          noisy: `${IMAGE_FOLDER}/Authenticity/noisy_pruned_model/heatmap_img_idx${currentIndex}.png`,
+          original: `${IMAGE_FOLDER}/Real_authenticity/original_images/original_img_idx${currentIndex}.png`,
+          base: `${IMAGE_FOLDER}/Real_authenticity/base_model/heatmap_img_idx${currentIndex}.png`,
+          noisy: `${IMAGE_FOLDER}/Real_authenticity/noisy_pruned_model/heatmap_img_idx${currentIndex}.png`,
         };
       }
 
@@ -459,160 +303,18 @@
         }
       }
 
-      // Initialize comparison sliders
-      function initComparison(figureElement) {
-        const sliderButton = figureElement.querySelector(".sliderButton");
-        const sliderButtonWidth = sliderButton.getBoundingClientRect().width;
-        const imageBefore = sliderButton.nextElementSibling;
-
-        let mouseDown = false;
-        let mousePosition;
-
-        // Set initial position
-        setTimeout(() => {
-          const figureWidth = figureElement.getBoundingClientRect().width;
-
-          // Start with slider in the middle
-          sliderButton.style.left = `${
-            figureWidth / 2 - sliderButtonWidth / 2
-          }px`;
-
-          // Set clip for "before" image
-          imageBefore.style.clip = `rect(0px, ${
-            figureWidth / 2
-          }px, 9999px, 0px)`;
-          imageBefore.style.clipPath = `inset(0 ${figureWidth / 2}px 0 0)`;
-        }, 100);
-
-        // Mouse events
-        sliderButton.addEventListener("mousedown", (event) => {
-          mousePosition = event.clientX;
-          mouseDown = true;
-        });
-
-        sliderButton.addEventListener("touchstart", (event) => {
-          mousePosition = event.touches[0].clientX;
-          mouseDown = true;
-        });
-
-        sliderButton.addEventListener("mouseup", () => (mouseDown = false));
-        sliderButton.addEventListener("touchend", () => (mouseDown = false));
-        sliderButton.addEventListener("mouseout", () => (mouseDown = false));
-
-        figureElement.addEventListener("mousemove", (event) => {
-          if (mouseDown) {
-            const sliderButtonPosition = parseInt(sliderButton.style.left) || 0;
-            const newPosition =
-              sliderButtonPosition + (event.clientX - mousePosition);
-
-            // Constrain slider within figure boundaries
-            const figureWidth = figureElement.getBoundingClientRect().width;
-
-            if (
-              newPosition >= 0 &&
-              newPosition <= figureWidth - sliderButtonWidth
-            ) {
-              sliderButton.style.left = `${newPosition}px`;
-              mousePosition = event.clientX;
-
-              // Update clip for "before" image
-              const clipPosition = sliderButtonWidth / 2 + newPosition;
-              imageBefore.style.clip = `rect(0px, ${clipPosition}px, ${
-                figureElement.getBoundingClientRect().height
-              }px, 0px)`;
-              imageBefore.style.clipPath = `inset(0 ${
-                figureWidth - clipPosition
-              }px 0 0)`;
-            }
-          }
-        });
-
-        figureElement.addEventListener(
-          "touchmove",
-          (event) => {
-            if (mouseDown) {
-              event.preventDefault();
-              const sliderButtonPosition =
-                parseInt(sliderButton.style.left) || 0;
-              const newPosition =
-                sliderButtonPosition +
-                (event.touches[0].clientX - mousePosition);
-
-              // Constrain slider within figure boundaries
-              const figureWidth = figureElement.getBoundingClientRect().width;
-
-              if (
-                newPosition >= 0 &&
-                newPosition <= figureWidth - sliderButtonWidth
-              ) {
-                sliderButton.style.left = `${newPosition}px`;
-                mousePosition = event.touches[0].clientX;
-
-                // Update clip for "before" image
-                const clipPosition = sliderButtonWidth / 2 + newPosition;
-                imageBefore.style.clip = `rect(0px, ${clipPosition}px, ${
-                  figureElement.getBoundingClientRect().height
-                }px, 0px)`;
-                imageBefore.style.clipPath = `inset(0 ${
-                  figureWidth - clipPosition
-                }px 0 0)`;
-              }
-            }
-          },
-          { passive: false }
-        );
-
-        // Window resize handler
-        window.addEventListener("resize", () => {
-          const figureWidth = figureElement.getBoundingClientRect().width;
-
-          // Recenter slider on resize
-          sliderButton.style.left = `${
-            figureWidth / 2 - sliderButtonWidth / 2
-          }px`;
-
-          // Reset clip for "before" image
-          imageBefore.style.clip = `rect(0px, ${
-            figureWidth / 2
-          }px, 9999px, 0px)`;
-          imageBefore.style.clipPath = `inset(0 ${figureWidth / 2}px 0 0)`;
-        });
-      }
-
       // Image load handlers
       originalImage.addEventListener("load", () => {
         originalLoading.style.display = "none";
       });
 
-      let bothNegativeImagesLoaded = false;
+      baseImage.addEventListener("load", () => {
+        baseLoading.style.display = "none";
+      });
 
-      function checkNegativeImagesLoaded() {
-        if (baseImageNegative.complete && negativeImage.complete) {
-          negativeLoading.style.display = "none";
-          if (!bothNegativeImagesLoaded) {
-            initComparison(negativeFigure);
-            bothNegativeImagesLoaded = true;
-          }
-        }
-      }
-
-      let bothNoisyImagesLoaded = false;
-
-      function checkNoisyImagesLoaded() {
-        if (baseImageNoisy.complete && noisyImage.complete) {
-          noisyLoading.style.display = "none";
-          if (!bothNoisyImagesLoaded) {
-            initComparison(noisyFigure);
-            bothNoisyImagesLoaded = true;
-          }
-        }
-      }
-
-      // Load event handlers
-      baseImageNegative.addEventListener("load", checkNegativeImagesLoaded);
-      negativeImage.addEventListener("load", checkNegativeImagesLoaded);
-      baseImageNoisy.addEventListener("load", checkNoisyImagesLoaded);
-      noisyImage.addEventListener("load", checkNoisyImagesLoaded);
+      noisyImage.addEventListener("load", () => {
+        noisyLoading.style.display = "none";
+      });
 
       // Error handling for images
       function handleImageError(img, errorOverlay) {
@@ -622,9 +324,7 @@
       }
 
       handleImageError(originalImage, originalLoading);
-      handleImageError(baseImageNegative, negativeLoading);
-      handleImageError(negativeImage, negativeLoading);
-      handleImageError(baseImageNoisy, noisyLoading);
+      handleImageError(baseImage, baseLoading);
       handleImageError(noisyImage, noisyLoading);
 
       // Event listeners
