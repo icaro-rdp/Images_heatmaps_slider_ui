@@ -138,6 +138,22 @@
         z-index: 20;
         font-weight: bold;
       }
+
+      .image-info {
+        margin-top: 15px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+
+      .image-info p {
+        margin: 5px 0;
+      }
+
+      .image-info-container {
+        margin-bottom: 30px;
+      }
     </style>
   </head>
   <body>
@@ -150,6 +166,11 @@
         <button id="prev-button" class="nav-button">← Previous</button>
         <div id="image-counter" class="nav-counter">Image 0 of 0</div>
         <button id="next-button" class="nav-button">Next →</button>
+      </div>
+
+      <!-- Add image info section here -->
+      <div class="image-info-container">
+        <div id="global-image-info"></div>
       </div>
 
       <!-- Side-by-side layout for all three images -->
@@ -222,26 +243,35 @@
 
           maxIndex = data.max_index;
           availableIndices = data.indices;
+          annotations = data.annotations;
 
           if (availableIndices.length > 0) {
-            currentIndex = availableIndices[0];
+            currentIndex = 0; // Start with index 0 instead of availableIndices[0]
           }
 
-          // Update UI
           updateImageCounter();
           updateNavigationButtons();
           loadImages();
         } catch (error) {
           console.error("Error fetching image info:", error);
-          // Fallback behavior if the API is not available
-          maxIndex = 10; // Assuming 10 images
-          availableIndices = Array.from({ length: maxIndex }, (_, i) => i + 1);
-          currentIndex = 1;
-
-          // Update UI
+          maxIndex = 10;
+          availableIndices = Array.from({ length: maxIndex }, (_, i) => i);
+          currentIndex = 0; // Start with index 0
           updateImageCounter();
           updateNavigationButtons();
           loadImages();
+        }
+      }
+
+      function updateImageInfo() {
+        const annotation = annotations[currentIndex]; // Changed from currentIndex - 1 to currentIndex
+        if (annotation) {
+          document.getElementById("global-image-info").innerHTML = `
+              <p><strong>Category:</strong> ${annotation.Category}</p>
+              <p><strong>Challenge:</strong> ${annotation.Challenge}</p>
+              <p><strong>Prompt:</strong> ${annotation.Prompt}</p>
+              <p><strong>Authenticity Score:</strong> ${annotation["Authenticity score"]}</p>
+          `;
         }
       }
 
@@ -271,6 +301,8 @@
         }?t=${timestamp}`;
         baseImage.src = `/static/${getImagePaths().base}?t=${timestamp}`;
         noisyImage.src = `/static/${getImagePaths().noisy}?t=${timestamp}`;
+
+        updateImageInfo();
       }
 
       // Get image paths based on current index

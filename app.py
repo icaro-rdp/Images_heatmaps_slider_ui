@@ -1,4 +1,5 @@
 # app.py
+import csv
 from flask import Flask, render_template, jsonify
 import os
 import re
@@ -25,10 +26,17 @@ def index():
     """Main page of the application."""
     return render_template('index.html')
 
+# Add CSV path
+CSV_PATH = os.path.join(BASE_DIR, 'static', 'Heatmap_images', 'Real_authenticity', 'real_images_annotations.csv')
+
+def read_image_annotations():
+    with open(CSV_PATH, 'r') as file:
+        reader = csv.DictReader(file)
+        return list(reader)
+
 @app.route('/api/image-info')
 def get_image_info():
     """API endpoint to get image information and max index."""
-    # Get list of files in base model directory
     try:
         if not os.path.exists(BASE_MODEL_FOLDER):
             return jsonify({
@@ -39,7 +47,6 @@ def get_image_info():
             
         files = os.listdir(BASE_MODEL_FOLDER)
         
-        # Extract indices from file names
         pattern = re.compile(r'heatmap_img_idx(\d+)\.png')
         indices = []
         for file in files:
@@ -47,12 +54,15 @@ def get_image_info():
             if match:
                 indices.append(int(match.group(1)))
         
-        # Get max index
         max_index = max(indices) if indices else 0
+        
+        # Add annotations to the response
+        annotations = read_image_annotations()
         
         return jsonify({
             'max_index': max_index,
-            'indices': sorted(indices)
+            'indices': sorted(indices),
+            'annotations': annotations
         })
     except Exception as e:
         print(f"Error getting image info: {e}")
