@@ -1,0 +1,139 @@
+Category,Challenge,Prompt,Authenticity score
+Fine-grained Detail,Food & Beverage,a bloody mary cocktail next to a napkin,36.978633880615234
+Linguistic Structures,Animals,A bird gives an apple to a squirrel,48.49447250366211
+Perspective,Produce & Plants,a cross-section view of a walnut,40.44449234008789
+Perspective,Indoor Scenes,an aerial view of a dining room,56.5778923034668
+Basic,Illustrations,a book cover,52.377967834472656
+Linguistic Structures,Food & Beverage,a plate that has no bananas on it. there is a glass without orange juice next to it.,60.543575286865234
+Quantity,People,three children on a couch,40.842716217041016
+Basic,World Knowledge,a photo of san francisco's golden gate bridge,56.43806838989258
+Perspective,People,two people facing each other,58.85997009277344
+Perspective,Animals,view of a giraffe and a zebra in the middle of a field,41.69642639160156
+Basic,Vehicles,a boat,66.98941802978516
+Perspective,Outdoor Scenes,an aerial photo of a sandy island in the ocean,54.902835845947266
+Simple Detail,Outdoor Scenes,Sunset over the sea,57.58268356323242
+Simple Detail,Outdoor Scenes,Sunset over the sea,48.04806137084961
+Basic,Animals,a corgi,47.24654006958008
+Simple Detail,World Knowledge,a boat in the canals of venice,57.31662368774414
+Fine-grained Detail,Vehicles,a large white yacht in a calm bay on a sunny day,63.280845642089844
+Linguistic Structures,Indoor Scenes,a kitchen without a refrigerator,43.0211181640625
+Quantity,Indoor Scenes,two pianos next to each other,51.03401565551758
+Basic,Indoor Scenes,a kitchen,48.32438278198242
+Perspective,Food & Beverage,a close-up of an old-fashioned cocktail,60.111106872558594
+Quantity,People,three children on a couch,50.623939514160156
+Linguistic Structures,Produce & Plants,a banana without its peel,54.751216888427734
+Basic,Vehicles,a boat,54.32731628417969
+Fine-grained Detail,People,a library filled with kids reading books,51.16670608520508
+Basic,Vehicles,a boat,43.1158447265625
+Linguistic Structures,People,a classroom without any students,54.73134231567383
+Perspective,Artifacts,view of a clock tower from above,55.68779373168945
+Simple Detail,World Knowledge,a boat in the canals of venice,61.72724151611328
+Perspective,World Knowledge,an aerial view of the Great Wall,41.01689910888672
+Quantity,People,three children on a couch,32.810585021972656
+Basic,World Knowledge,a photo of san francisco's golden gate bridge,64.0991439819336
+Perspective,Animals,view of a giraffe and a zebra in the middle of a field,47.93700408935547
+Perspective,Indoor Scenes,an aerial view of a dining room,51.3419075012207
+Linguistic Structures,World Knowledge,An aerial view of Ha Long Bay without any boats,50.79591369628906
+Linguistic Structures,Indoor Scenes,a kitchen without a refrigerator,70.2623062133789
+Complex,Vehicles,a blue semi-truck and its trailer jumping over a row of motorcycles. there are metal ramps on either side of the motorcycles. ,49.574684143066406
+Linguistic Structures,Indoor Scenes,a kitchen without a refrigerator,55.97650909423828
+Basic,Animals,a corgi,36.31013870239258
+Fine-grained Detail,Produce & Plants,a small garden with an apple tree behind it,44.35820770263672
+Simple Detail,Produce & Plants,a pumpkin with a candle in it,56.840240478515625
+Linguistic Structures,Food & Beverage,a plate that has no bananas on it. there is a glass without orange juice next to it.,51.0633430480957
+Simple Detail,Produce & Plants,a pumpkin with a candle in it,65.69357299804688
+Quantity,World Knowledge,Times Square with thousands of dogs running around,47.17140579223633
+Quantity,Indoor Scenes,two pianos next to each other,58.58245086669922
+Perspective,Vehicles,an overhead view of a pickup truck with boxes in its flatbed,44.181724548339844
+Linguistic Structures,World Knowledge,An aerial view of Ha Long Bay without any boats,60.62137985229492
+Simple Detail,Food & Beverage,A bowl of Chicken Pho,47.61906814575195
+Simple Detail,Outdoor Scenes,Sunset over the sea,50.80653762817383
+Fine-grained Detail,Produce & Plants,a small garden with an apple tree behind it,53.80900955200195
+Fine-grained Detail,Outdoor Scenes,a fall landscape with a small cottage next to a lake,47.699981689453125
+Fine-grained Detail,Indoor Scenes,A bare kitchen has wood cabinets and white appliances,58.74985122680664
+Perspective,People,two people facing each other,48.07439422607422
+Quantity,Indoor Scenes,two pianos next to each other,45.541664123535156
+Perspective,Indoor Scenes,an aerial view of a dining room,52.4013671875
+Basic,Vehicles,a boat,60.70437240600586
+Linguistic Structures,Produce & Plants,a banana without its peel,35.01015090942383
+Perspective,World Knowledge,an aerial view of the Great Wall,47.719215393066406
+Complex,Produce & Plants,a tree reflected in the sunroof of a blue car,55.47948455810547
+Quantity,People,three children on a couch,46.864654541015625
+Simple Detail,Vehicles,A red bus is driving on the road,60.265933990478516
+Basic,People,a girl,59.81721115112305
+Quantity,Produce & Plants,ten red apples,56.7932243347168
+Basic,World Knowledge,a photo of san francisco's golden gate bridge,65.8355941772461
+Basic,Outdoor Scenes,a fall landscape,50.033172607421875
+Perspective,People,two people facing each other,43.37443542480469
+Simple Detail,Outdoor Scenes,Sunset over the sea,55.525516510009766
+Quantity,Vehicles,two motorcycles facing each other,55.966819763183594
+Linguistic Structures,World Knowledge,An aerial view of Ha Long Bay without any boats,52.36968994140625
+Perspective,Vehicles,an overhead view of a pickup truck with boxes in its flatbed,47.13404083251953
+Perspective,World Knowledge,an aerial view of the Great Wall,68.63616180419922
+Linguistic Structures,World Knowledge,An aerial view of Ha Long Bay without any boats,53.73773956298828
+Simple Detail,Produce & Plants,a pumpkin with a candle in it,56.2419319152832
+Basic,Produce & Plants,a flower,51.96635437011719
+Perspective,People,two people facing each other,53.09449005126953
+Basic,Vehicles,a boat,62.224117279052734
+Basic,Illustrations,a book cover,54.36998748779297
+Basic,Food & Beverage,a green pepper,54.44490051269531
+Simple Detail,Indoor Scenes,a coffee table with a magazine on it,44.374595642089844
+Basic,Indoor Scenes,a kitchen,50.997520446777344
+Complex,Outdoor Scenes,Snow mountain and tree reflection in the lake,56.00175094604492
+Basic,People,a girl,37.674190521240234
+Complex,Vehicles,a blue semi-truck and its trailer jumping over a row of motorcycles. there are metal ramps on either side of the motorcycles. ,56.34815979003906
+Perspective,Outdoor Scenes,an aerial photo of a sandy island in the ocean,59.53740310668945
+Perspective,Vehicles,an overhead view of a pickup truck with boxes in its flatbed,45.81113815307617
+Simple Detail,Animals,A giraffe walking through a green grass covered field,53.27779769897461
+Basic,Indoor Scenes,a kitchen,47.22750473022461
+Complex,Food & Beverage,a pineapple with one beer to its left and two beers on its right,53.23090362548828
+Perspective,Indoor Scenes,an aerial view of a dining room,61.34543228149414
+Simple Detail,Indoor Scenes,a coffee table with a magazine on it,53.81130599975586
+Linguistic Structures,Vehicles,a car with no windows,44.5171012878418
+Quantity,Food & Beverage,three green peppers,54.67319107055664
+Simple Detail,Produce & Plants,a pumpkin with a candle in it,55.10935974121094
+Fine-grained Detail,Outdoor Scenes,a fall landscape with a small cottage next to a lake,47.70606231689453
+Linguistic Structures,Food & Beverage,a plate that has no bananas on it. there is a glass without orange juice next to it.,61.35691833496094
+Quantity,Artifacts,two red balls on a table,44.24241638183594
+Simple Detail,Indoor Scenes,a coffee table with a magazine on it,53.018585205078125
+Perspective,Animals,view of a giraffe and a zebra in the middle of a field,55.46533966064453
+Basic,People,a girl,60.480018615722656
+Linguistic Structures,World Knowledge,An aerial view of Ha Long Bay without any boats,41.895633697509766
+Basic,Vehicles,a boat,51.05360794067383
+Simple Detail,Animals,A giraffe walking through a green grass covered field,52.22136306762695
+Linguistic Structures,Outdoor Scenes,a street without vehicles,62.05620193481445
+Simple Detail,People,a woman with long hair,48.435935974121094
+Quantity,Produce & Plants,ten red apples,47.28462219238281
+Basic,Vehicles,a boat,41.798301696777344
+Fine-grained Detail,People,a library filled with kids reading books,52.06901550292969
+Linguistic Structures,Animals,A bird gives an apple to a squirrel,46.608097076416016
+Complex,Vehicles,a blue semi-truck and its trailer jumping over a row of motorcycles. there are metal ramps on either side of the motorcycles. ,44.75496292114258
+Basic,Vehicles,a boat,50.31039810180664
+Simple Detail,Vehicles,A red bus is driving on the road,56.384490966796875
+Basic,Animals,a corgi,32.70532989501953
+Simple Detail,Indoor Scenes,a coffee table with a magazine on it,45.239253997802734
+Basic,Food & Beverage,a green pepper,36.08822250366211
+Fine-grained Detail,Produce & Plants,a small garden with an apple tree behind it,54.15675354003906
+Basic,Animals,a corgi,66.46798706054688
+Simple Detail,Food & Beverage,A bowl of Chicken Pho,64.79326629638672
+Basic,Animals,a corgi,59.652320861816406
+Linguistic Structures,Produce & Plants,a banana without its peel,58.638816833496094
+Quantity,Produce & Plants,ten red apples,36.34961700439453
+Complex,Produce & Plants,a tree reflected in the sunroof of a blue car,43.54646301269531
+Perspective,Produce & Plants,a cross-section view of a walnut,40.576927185058594
+Complex,People,a grandmother reading a book to her grandson and granddaughter,43.98406219482422
+Quantity,People,three children on a couch,41.023284912109375
+Complex,Food & Beverage,a pineapple with one beer to its left and two beers on its right,54.2158088684082
+Quantity,Vehicles,two motorcycles facing each other,60.086517333984375
+Basic,Artifacts,a bench,50.892181396484375
+Basic,Animals,a corgi,52.849090576171875
+Basic,Outdoor Scenes,a fall landscape,55.21266555786133
+Quantity,Produce & Plants,ten red apples,41.80537033081055
+Simple Detail,Vehicles,A red bus is driving on the road,62.6873664855957
+Fine-grained Detail,Vehicles,a large white yacht in a calm bay on a sunny day,55.25617980957031
+Complex,Indoor Scenes,A cozy living room with a painting of a corgi on the wall above a couch and a round coffee table in front of a couch and a vase of flowers on a coffee table,43.96896743774414
+Linguistic Structures,Vehicles,a car with no windows,48.25038528442383
+Simple Detail,Animals,A giraffe walking through a green grass covered field,35.68863296508789
+Linguistic Structures,Artifacts,a closet without clothes,56.06611633300781
+Basic,Vehicles,a boat,56.79745864868164
+Perspective,People,two people facing each other,48.75815963745117
